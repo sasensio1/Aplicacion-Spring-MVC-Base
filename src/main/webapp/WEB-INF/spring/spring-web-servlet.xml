@@ -30,7 +30,8 @@
         http://cxf.apache.org/transports/http/configuration
         http://cxf.apache.org/schemas/configuration/http-conf.xsd">
 
-	<context:component-scan base-package="com.enelnotificacionesproactjava" />
+	<!-- INFO:Sentencia necesaria para tener acceso a toda la parte Back-End de la aplicación -->
+	<context:component-scan base-package="com.springBasicProject" />
 	
 	<!-- Register the properties file -->	
  	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
@@ -52,10 +53,12 @@
 	  	</bean>
 	</mvc:interceptors>
 	
+	<!-- INFO:Sentencia necesaria para con la que le decimos a Spring el modelo vista con el quevamos a trabajar (JSP)-->
 	<bean id="urlMapping" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>		
+	
 	<mvc:annotation-driven />
  	<bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 	<mvc:resources mapping="/resources/**" location="/resources/"/> 

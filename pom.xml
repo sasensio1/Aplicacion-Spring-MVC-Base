@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.enel</groupId>
-	<artifactId>enelNotificacionesProactJava</artifactId>
+	<groupId>com</groupId>
+	<artifactId>SpringBasicProject</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>emechil Maven Webapp</name>
@@ -32,19 +32,7 @@
 		<wsdl4j.version>1.6.3</wsdl4j.version>
 		<cxf.version>3.1.7</cxf.version>
 		<junit.version>4.12</junit.version>
-		<!--<tomcat.version>8.0.28</tomcat.version>-->
 	</properties>
-	<repositories>
-		<repository>
-			<id>force-rest-api</id>
-			<name>force-rest-api repository on GitHub</name>
-			<url>http://jesperfj.github.com/force-rest-api/repository/</url>
-		</repository>
-		<repository>
-			<id>webjars</id>
-			<url>http://webjars.github.com/m2</url>
-		</repository>
-	</repositories>
 	<dependencies>
 		<!-- Spring MVC -->
 		<dependency>
@@ -112,48 +100,8 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- BBDD -->
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>${postgresql.version}</version>
-		</dependency>
 		<!-- Hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
 		<!-- Apache commons -->
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>${commons-dbcp.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>${httpcomponents.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-httpclient</groupId>
-			<artifactId>commons-httpclient</artifactId>
-			<version>${commons-httpclient.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>commons-discovery</groupId>
-		    <artifactId>commons-discovery</artifactId>
-		    <version>${commons-discovery.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>commons-lang</groupId>
-		    <artifactId>commons-lang</artifactId>
-		    <version>${commons-lang.version}</version>
-		</dependency>
 		<!-- Log4j -->
 		<dependency>
 			<groupId>log4j</groupId>
@@ -161,69 +109,13 @@
 			<version>${log.version}</version>
 		</dependency>
 		<!-- JSON -->
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>${json.version}</version>
-		</dependency>
 		<!-- Quartz -->
-		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>${quartz.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz-jobs</artifactId>
-			<version>${quartz-jobs.version}</version>
-		</dependency>
 		<!-- SalesForce -->
-		<dependency>
-			<groupId>com.force.api</groupId>
-			<artifactId>force-rest-api</artifactId>
-			<version>${force-rest-api.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.force.sdk</groupId>
-			<artifactId>force-oauth</artifactId>
-			<version>${force-oauth.version}</version>
-		</dependency>
 		<!-- CXF Web Services -->
-		<dependency>
-		    <groupId>org.apache.cxf</groupId>
-		    <artifactId>cxf-core</artifactId>
-		    <version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.cxf</groupId>
-		    <artifactId>cxf-rt-transports-http</artifactId>
-		    <version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-   			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.cxf</groupId>
-		    <artifactId>cxf-rt-ws-policy</artifactId>
-		    <version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.cxf</groupId>
-		    <artifactId>cxf-rt-ws-security</artifactId>
-		    <version>${cxf.version}</version>
-		</dependency>
 		<!-- JUnit -->
-		<dependency>
-		    <groupId>junit</groupId>
-		    <artifactId>junit</artifactId>
-		    <version>${junit.version}</version>
-		    <scope>test</scope>
-		</dependency>
 	</dependencies>
 	<build>
-		<finalName>enelNotificacionesProactJava</finalName>
+		<finalName>SpringBasicProject</finalName>
 		<plugins>
 			<!-- Maven war plugin -->
 			<plugin>
@@ -277,55 +169,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- Heroku deploy plugin -->
-			<plugin>
-				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId>
-				<version>1.1.1</version>
-				<configuration>
-					<!-- <appName>chile-en-dev</appName> -->
-					<appName>chile-en-dev-bulkapi</appName>
-				</configuration>
-			</plugin>
-			<!-- Configuracion CXF para generar las clases cliente de los servicios web -->
-			<!-- Tenerlo comentado para evitar que genere las clases cada vez que compile. -->
-			<!-- <plugin>
-			    <groupId>org.apache.cxf</groupId>
-			    <artifactId>cxf-codegen-plugin</artifactId>
-			    <version>${cxf.version}</version>
-			    <executions>
-			        <execution>
-			            <id>generate-sources</id>
-			            <phase>generate-sources</phase>
-			            <configuration>
-			            	<defaultOptions>
-							    <noAddressBinding>true</noAddressBinding>
-							</defaultOptions>
-			                <sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
-			                <wsdlOptions>
-			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/resources/webservices/wsdl/SIEME009.WSDL</wsdl>
-			                        <extraargs>
-			                        	<extraarg>-client</extraarg>
-			                        	<extraarg>-verboset</extraarg>
-			                        	<extraarg>-p</extraarg>
-			                        	<extraarg>your.namespace/services/=your.package</extraarg>
-			                        </extraargs>
-			                    </wsdlOption>
-			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/resources/webservices/wsdl/SIRES033.WSDL</wsdl>
-			                    </wsdlOption>
-			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/resources/webservices/wsdl/SIEME002.WSDL</wsdl>
-			                    </wsdlOption>
-			                </wsdlOptions>
-			            </configuration>
-			            <goals>
-			                <goal>wsdl2java</goal>
-			            </goals>
-			        </execution>
-			    </executions>
-			</plugin> -->
 		</plugins>
 	</build>
 </project>
