@@ -30,7 +30,11 @@
         http://cxf.apache.org/transports/http/configuration
         http://cxf.apache.org/schemas/configuration/http-conf.xsd">
 
+<<<<<<< HEAD
+	<!-- SASENINFO:Sentencia necesaria para tener acceso a toda la parte Back-End de la aplicación -->
+=======
 	<!-- INFO:Sentencia necesaria para tener acceso a toda la parte Back-End de la aplicación -->
+>>>>>>> branch 'branch001' of https://github.com/sasensio1/Aplicacion-Spring-MVC-Base.git
 	<context:component-scan base-package="com.springBasicProject" />
 	
 	<!-- Register the properties file -->	
@@ -53,7 +57,11 @@
 	  	</bean>
 	</mvc:interceptors>
 	
+<<<<<<< HEAD
+	<!-- SASENINFO:Sentencia necesaria para con la que le decimos a Spring el modelo vista con el quevamos a trabajar (JSP)-->
+=======
 	<!-- INFO:Sentencia necesaria para con la que le decimos a Spring el modelo vista con el quevamos a trabajar (JSP)-->
+>>>>>>> branch 'branch001' of https://github.com/sasensio1/Aplicacion-Spring-MVC-Base.git
 	<bean id="urlMapping" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"/>
 		<property name="suffix" value=".jsp"/>

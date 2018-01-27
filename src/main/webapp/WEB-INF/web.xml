@@ -18,9 +18,21 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+<<<<<<< HEAD
+	<!--SASENINFO: Definimos el path con el tiene que empezar la url para llegar a los metodos del controlador -->
+	<servlet-mapping>
+		<servlet-name>spring-web</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<!--SASENINFO: JSP inicial de Carga-->	
+	<welcome-file-list>
+		<welcome-file>initialPage.jsp</welcome-file>
+	</welcome-file-list>	
+=======
 	<servlet-mapping>
 		<servlet-name>spring-web</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+>>>>>>> branch 'branch001' of https://github.com/sasensio1/Aplicacion-Spring-MVC-Base.git
 </web-app>
