@@ -47,6 +47,40 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>		
 	
+	<!-- SASENINFO:Declaramos variables de entorno de conexion con TOMCAT a la BBDD-->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		 <property name="driverClassName" value="org.postgresql.Driver" /> 
+		 <property name="url" value="#{systemEnvironment['DATABASE_URL_JAVA']}" />
+		 <property name="username" value="#{systemEnvironment['DATABASE_USER']}" />
+		 <property name="password" value="#{systemEnvironment['DATABASE_PASSWORD']}" />   
+	</bean>
+	
+	<!-- SASENINFO:Mapeamos con Hibernate tablas de la BBDD a clases VO-->
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		  <property name="dataSource" ref="dataSource" />
+		  <property name="annotatedClasses">  
+	            <list>  
+	                <value>com.springBasicProject.vo.AcademiaVO</value> 
+	            </list>
+		  </property>
+		  <property name="hibernateProperties">
+			   <props>
+				    <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				    <prop key="hibernate.show_sql">true</prop>
+				    <prop key="hibernate.connection.requireSSL">false</prop>
+				    <prop key="hibernate.connection.autocommit">true</prop>
+			   </props>
+		  </property>
+	</bean>
+	
+	<bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+	
+	<!-- SASENINFO:Services de la aplicacion-->
+	<bean id="academiaService" class="com.springBasicProject.logic.AcademiaServiceImpl"/>
+
 	<mvc:annotation-driven />
  	<bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 	<mvc:resources mapping="/resources/**" location="/resources/"/> 

@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com</groupId>
-	<artifactId>SpringBasicProject</artifactId>
+	<artifactId>springbasicproject</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>emechil Maven Webapp</name>
@@ -100,7 +100,22 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- BBDD -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
 		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
 		<!-- Apache commons -->
 		<!-- Log4j -->
 		<dependency>
@@ -115,7 +130,7 @@
 		<!-- JUnit -->
 	</dependencies>
 	<build>
-		<finalName>SpringBasicProject</finalName>
+		<finalName>springBasicProject</finalName>
 		<plugins>
 			<!-- Maven war plugin -->
 			<plugin>
